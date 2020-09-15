@@ -1,2 +1,4 @@
+import requests
 def main(event, context):
-    return "Jam jest Python!!!!"
+    r = requests.get('https://swapi.dev/api/people/13')
+    return r.json()
