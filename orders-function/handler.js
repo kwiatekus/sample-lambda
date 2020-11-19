@@ -9,6 +9,7 @@ const errors = {
 
 module.exports = {
   main: async function (event, _) {
+    console.log("Hello everybody");
     const storage = getStorage();
 
     if (!event.data || !Object.keys(event.data).length) {
