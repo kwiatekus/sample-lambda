@@ -122,7 +122,6 @@ function createStorage() {
   const password = readEnv(redisPrefix + "REDIS_PASSWORD");
 
   if (host && port && password) {
-    console.log("Using redis storage ",host);
     return new RedisStorage({ host, port, password });
   }
   return new InMemoryStorage();
