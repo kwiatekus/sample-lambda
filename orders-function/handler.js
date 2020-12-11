@@ -9,15 +9,16 @@ const errors = {
 
 module.exports = {
   main: async function (event, _) {
-    console.log("Hello everybody");
     const storage = getStorage();
 
     if (!event.data || !Object.keys(event.data).length) {
+      console.log("Listing orders...");
       return await onList(storage, event);
     }
 
     const { orderCode, consignmentCode, consignmentStatus } = event.data;
     if (orderCode && consignmentCode && consignmentStatus) {
+      console.log("Storing order...");
       return await onCreate(storage, event);
     }
 
@@ -126,6 +127,7 @@ function createStorage() {
     console.log("Using redis ", host);
     return new RedisStorage({ host, port, password });
   }
+  console.log("Using in-memory storage ");
   return new InMemoryStorage();
 }
 
