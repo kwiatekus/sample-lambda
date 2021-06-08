@@ -18,7 +18,7 @@ module.exports = {
 
     const { orderCode, consignmentCode, consignmentStatus } = event.data;
     if (orderCode && consignmentCode && consignmentStatus) {
-      console.log("Storing order...");
+      console.log("Storing order ["+orderCode+"] ...");
       return await onCreate(storage, event);
     }
 
