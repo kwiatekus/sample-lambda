@@ -1,5 +1,5 @@
 module.exports = {
   main: function (event, context) {
-    return "Jam jest nodejs !!!!";
+    return "Node JS is cool!";
   },
 };
