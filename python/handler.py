@@ -1,4 +1,4 @@
 import requests
 def main(event, context):
-    r = requests.get('https://swapi.dev/api/people/10')
+    r = requests.get('https://swapi.dev/api/people/9')
     return r.json()
