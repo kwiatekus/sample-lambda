@@ -4,7 +4,7 @@ module.exports = {
     console.log(`Will wait ${waitTime}`);
     let promise = new Promise((resolve, reject) => {
       setTimeout(() => {
-        resolve(`Resolved after ${waitTime}`);
+        resolve(`Resolved after ${waitTime}!!`);
       }, waitTime)
     })
     
