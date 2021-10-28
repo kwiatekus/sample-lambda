@@ -1,5 +1,5 @@
 {
-  "name": "sample-lambda",
+  "name": "sample",
   "version": "1.0.0",
   "description": "",
   "main": "handler.js",
