@@ -6,7 +6,11 @@ module.exports = {
         setTimeout(() => {
             var payload = {
                 ...event.data,
-                waitTime
+                waitTime,
+                check_in: {
+                  ...event.data.check_in,
+                  fun1: true
+              }
             };
             if(process.env['PUSH_EVENT_TYPE']){
                 var eventOut=event.buildResponseCloudEvent(payload.uuid,process.env['PUSH_EVENT_TYPE'],payload);
