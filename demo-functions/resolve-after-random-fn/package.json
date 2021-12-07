@@ -1,5 +1,7 @@
 {
   "name": "resolve-after-rabdom-fn",
   "version": "0.0.1",
-  "dependencies": {}
+  "dependencies": {
+    "fibonacci":"1.6.10"
+  }
 }

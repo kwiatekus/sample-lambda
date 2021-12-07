@@ -1,3 +1,4 @@
+const fibonacci = require ('fibonacci');
 module.exports = {
     main: async function (event, context) {
       let waitTime = between(100, 3000); 
@@ -10,6 +11,10 @@ module.exports = {
                 check_in: {
                   ...event.data.check_in,
                   fun1: true
+              },
+              fibo: {
+                ...event.data.fibo,
+                fun1: fibonacci.iterate(between(10,30))
               }
             };
             if(process.env['PUSH_EVENT_TYPE']){
@@ -24,8 +29,8 @@ module.exports = {
       return await promise;
     },
   };
-  
-  
+
+
   
   function between(min, max) {
     return Math.floor(Math.random() * (max - min) + min);
