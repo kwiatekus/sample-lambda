@@ -14,7 +14,7 @@ module.exports = {
               },
               fibo: {
                 ...event.data.fibo,
-                fun1: fibonacci.iterate(between(10,30))
+                fun1: fibonacci.iterate(between(parseInt(process.env['FIBONACCI_MIN'],10),parseInt(process.env['FIBONACCI_MAX'],10)))
               }
             };
             if(process.env['PUSH_EVENT_TYPE']){
@@ -35,4 +35,6 @@ module.exports = {
   function between(min, max) {
     return Math.floor(Math.random() * (max - min) + min);
   }
+  
+
   
