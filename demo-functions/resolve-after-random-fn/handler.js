@@ -11,11 +11,11 @@ module.exports = {
                 waitTime,
                 check_in: {
                   ...dataIn.check_in,
-                  fun1: true
+                  fun3: new Date()
               },
               fibo: {
                 ...dataIn.fibo,
-                fun1: fibonacci.iterate(between(parseInt(process.env['FIBONACCI_MIN'],10),parseInt(process.env['FIBONACCI_MAX'],10)))
+                fun3: fibonacci.iterate(between(parseInt(process.env['FIBONACCI_MIN'],10),parseInt(process.env['FIBONACCI_MAX'],10)))
               }
             };
             if(process.env['PUSH_EVENT_TYPE']){
