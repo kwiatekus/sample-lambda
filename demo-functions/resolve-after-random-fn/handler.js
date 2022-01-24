@@ -1,19 +1,20 @@
 const fibonacci = require ('fibonacci');
 module.exports = {
     main: async function (event, context) {
+      const dataIn = JSON.parse(event.data);
       let waitTime = between(100, 3000); 
       console.log(`Will wait ${waitTime}`);
       let promise = new Promise((resolve, reject) => {
         setTimeout(() => {
             var payload = {
-                ...event.data,
+                ...dataIn,
                 waitTime,
                 check_in: {
-                  ...event.data.check_in,
+                  ...dataIn.check_in,
                   fun1: true
               },
               fibo: {
-                ...event.data.fibo,
+                ...dataIn.fibo,
                 fun1: fibonacci.iterate(between(parseInt(process.env['FIBONACCI_MIN'],10),parseInt(process.env['FIBONACCI_MAX'],10)))
               }
             };
