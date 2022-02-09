@@ -20,6 +20,7 @@ module.exports = {
             };
             if(process.env['PUSH_EVENT_TYPE']){
                 var eventOut=event.buildResponseCloudEvent(payload.uuid,process.env['PUSH_EVENT_TYPE'],payload);
+                eventOut.datacontenttype="application/json";
                 event.publishCloudEvent(eventOut);
                 console.log(`Payload [${payload.uuid}] pushed to ${process.env['PUSH_EVENT_TYPE']}`,payload)
             }
