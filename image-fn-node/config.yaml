@@ -1,0 +1,19 @@
+name: otter-fn
+namespace: default
+labels:
+    app.kubernetes.io/name: otter-fn
+runtime: nodejs14
+source:
+    sourceType: git
+    url: https://github.com/kwiatekus/sample-lambda.git
+    baseDir: /image-fn-node
+    reference: master
+apiRules:
+    - name: otter-fn
+      service:
+        host: otter-fn
+      rules:
+        - methods:
+            - GET
+          accessStrategies:
+            - handler: allow

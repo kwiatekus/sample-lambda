@@ -1,0 +1,5 @@
+{ 
+  "name": "asdasd",
+  "version": "1.0.0",
+  "dependencies": {"axios":"0.19.2", "content-type": "=1.0.4"}
+}
