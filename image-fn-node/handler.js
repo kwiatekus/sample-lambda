@@ -11,7 +11,7 @@ module.exports = {
       stream.on("finish", resolve);
       stream.on("error", reject);
 
-      const url = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Fischotter%2C_Lutra_Lutra.JPG/640px-Fischotter%2C_Lutra_Lutra.JPG";
+      const url = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Lutra_lutra1pl.jpg/2560px-Lutra_lutra1pl.jpg";
   
       const downloadStream = await axios({
         url,
